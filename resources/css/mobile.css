@@ -1,0 +1,108 @@
+/* Styles for mobile screens */
+@media only screen and (max-width: 570px) {
+  /* Universal */
+  .desktop,
+  .thesis h3,
+  .thesis p,
+  .program h5,
+  .program p {
+    display: none;
+  }
+
+  .mobile {
+    display: inherit;
+  }
+
+  .container,
+  .headline {
+    flex-direction: column;
+  }
+
+  .feature,
+  .sidebar {
+    width: auto;
+    margin: 0;
+  }
+
+  /* Header */
+  nav {
+    width: 100%;
+  }
+  
+  .logo-nav-bar ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav img {
+    width: auto;
+  }
+
+  .banner .sidebar {
+    max-width: none;
+    padding: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p, a {
+    font-size: 0.75rem;
+  }
+
+  /* Main */
+  .headline {
+    border: none;
+  }
+
+  .news .headline:first-child {
+    padding-top: 0;
+  }
+
+  .news .headline:last-child {
+    background-color: inherit;
+  }
+
+  .headline-img {
+    width: auto;
+  }
+
+  .headline-text {
+    width: auto;
+    margin: 1rem 2rem;
+  }
+
+  .programs {
+    background-color: #EEEEEE;
+    border: 1px solid #DDDDDD;
+    padding: 2rem 1rem;
+  }
+
+  .program {
+    max-width: none;
+    background-color: #BBBBBB;
+    margin: 0.25rem 0;
+  }
+
+  .thesis {
+    padding-bottom: 1.5rem;
+  }
+  /* Footer */
+  footer {
+    padding: 1rem;
+    font-size: 0.75rem;
+    border: none;
+  }
+}

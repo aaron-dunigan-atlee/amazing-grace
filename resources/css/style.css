@@ -1,0 +1,227 @@
+/* Custom fonts */
+/*
+@font-face {
+  font-family: "Calculative";
+  src: url(../fonts/Calculative.ttf) format('truetype');
+}
+*/
+
+/* Define some color variables */
+:root {
+  --logo-yellow: #fdfe98;
+  --logo-orange: #fe6500;
+  --logo-shadow: #091140;
+  --dark-accent-text: #323298;
+  --warm-accent-text: #cb0000;
+
+}
+
+/* Universal styles */
+html {
+  font-size: 16px;
+  background-color: white;
+  font-family: 'Oxygen', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  line-height: 1.5;
+  max-width: 960px;
+  
+}
+
+.mobile {
+  display: none;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--dark-accent-text);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--dark-accent-text);
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dark-accent-text);
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--dark-accent-text);
+}
+
+h5 {
+  text-transform: uppercase;
+}
+
+h6 {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+a {
+  color: var(--logo-orange);
+}
+
+a:visited {
+  color: var(--warm-accent-text);
+}
+
+/* Header section */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+  position: fixed;
+  max-width: inherit;
+  background-color: white;
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;  
+}
+
+header .headline {
+  text-align: left;
+  margin-left: 2rem;
+}
+
+header h3 {
+  color: var(--warm-accent-text);
+}
+
+nav {
+  font-size: 20px;
+  background-color: var(--logo-yellow);
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+  padding: 0.25rem 0;
+  margin: 0.5rem 0;
+  border-radius: 15px;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  /*margin: 0.5rem;*/
+  color: var(--dark-accent-text);
+  padding: 0.25rem 1.5rem;
+  border-radius: 15px;
+}
+
+nav a:visited {
+  color: var(--dark-accent-text);
+}
+
+nav a:hover {
+  background-color: #ffff50;
+}
+
+/* Main section */
+/* Banner */
+.banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  margin-top: 220px;
+}
+
+.billboard {
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.billboard .headline {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.billboard .container {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.billboard h1 {
+  font-weight: normal;
+  text-shadow: 1px 1px 2px;
+}
+
+.donate {
+  text-align: center;
+  width: 200px;
+  padding: 0 25px;
+  vertical-align: middle;
+}
+
+.paypal {
+  margin-top: 0.5rem;
+}
+
+
+/* Content text */
+main p {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sub-section {
+  margin: 0.75rem 1rem;
+}
+
+main ul {
+  list-style: disc;
+  margin-left: 1rem;
+}
+
+main li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer section */
+footer {
+  background-color: var(--logo-yellow);
+  border: 1px solid var(--logo-orange);
+  border-radius: 15px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+footer a {
+  color: var(--warm-accent-text);
+}
