@@ -28,7 +28,6 @@ html {
 
 body {
   line-height: 1.5;
-  max-width: 960px;
   
 }
 
@@ -85,24 +84,22 @@ a:visited {
 /* Header section */
 header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  padding-top: 0.5rem;
-  position: fixed;
-  max-width: inherit;
+  background-image: url("../images/logo_banner.jpg");
+  background-repeat: no-repeat;
+  background-position: left;
+  height: 150px;
   background-color: white;
 }
 
 .logo {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;  
+  width: 266px;
+  height: 165px;
+  visibility: hidden;
 }
 
-header .headline {
-  text-align: left;
-  margin-left: 2rem;
-}
 
 header h3 {
   color: var(--warm-accent-text);
@@ -110,7 +107,6 @@ header h3 {
 
 nav {
   font-size: 20px;
-  background-color: var(--logo-yellow);
   font-family: 'Merriweather', serif;
   font-weight: bold;
   padding: 0.25rem 0;
@@ -122,7 +118,8 @@ nav {
 nav ul {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  align-items: center;
+  height: fit-content;
 }
 
 nav li {
@@ -141,42 +138,10 @@ nav a:visited {
 }
 
 nav a:hover {
-  background-color: #ffff50;
+  background-color: var(--logo-yellow);
 }
 
 /* Main section */
-/* Banner */
-.banner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 0.75rem;
-  margin-top: 220px;
-}
-
-.billboard {
-  width: 100%;
-  border: 1px solid gray;
-  border-radius: 25px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.billboard .headline {
-  text-align: center;
-  padding: 1.5rem;
-}
-
-.billboard .container {
-  text-align: center;
-  padding: 1.5rem;
-}
-
-.billboard h1 {
-  font-weight: normal;
-  text-shadow: 1px 1px 2px;
-}
 
 .donate {
   text-align: center;
