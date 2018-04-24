@@ -1,0 +1,11 @@
+/* Styles for donate page. */
+.donate {
+  text-align: center;
+  width: 200px;
+  padding: 0 25px;
+  vertical-align: middle;
+}
+
+.paypal {
+  margin-top: 0.5rem;
+}
