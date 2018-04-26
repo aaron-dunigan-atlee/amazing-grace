@@ -24,7 +24,12 @@
 		<link rel="stylesheet" type="text/css" href="./resources/css/reset.css" />
 		<link rel="stylesheet" type="text/css" href="./resources/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="./resources/css/index.css" />
+		<link rel="stylesheet" type="text/css" href="./resources/css/menu.css" />
+   	 	<link rel="stylesheet" type="text/css" href="./resources/css/tablet.css" />
+    	<link rel="stylesheet" type="text/css" href="./resources/css/mobile.css" />
 
+		<script src="./resources/scripts/menu.js"></script>
+		
 		<link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&amp;subset=latin-ext" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Merriweather:400,700&amp;subset=latin-ext" rel="stylesheet">
 		<!-- 1. Link to jQuery (1.8 or later), -->
@@ -33,28 +38,73 @@
 		<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
 
+
+
 	</head>
 	<body>
-		<header>
-				
-			<img class="logo" src="./resources/images/pixel.png">
-			<nav class="desktop">
-				<div class="container">
-					<ul>
+			<header>
+				<a href="./index.html"><img class="logo-text" src="./resources/images/logo_text.jpg"/></a>	
+				<a href="./index.html"><img class="logo-spacer" src="./resources/images/pixel.png"/></a>
+					<nav class="desktop">
+						<ul>
+							<li><a href="./about.html">About</a></li>
+							<li><a href="./activities.html">Activities</a></li>
+							<li><a href="./impact.html">Impact</a></li>
+							<li><a href="./participate.html">Participate</a></li>
+							<li><a href="./volunteer.html">Volunteer</a></li>
+							<li><a href="./donate.html">Donate</a></li>
+							<li><a href="./contact.html">Contact</a></li>
+						</ul>
 						
-						<li><a href="./about.html">About</a></li>
-						<li><a href="./activities.html">Activities</a></li>
-						<li><a href="./impact.html">Impact</a></li>
-						<li><a href="./participate.html">Participate</a></li>
-						<li><a href="./volunteer.html">Volunteer</a></li>
-						<li><a href="./donate.html">Donate</a></li>
-						<li><a href="./contact.html">Contact</a></li>
-					</ul>
-				</div>
-			</nav>
-		</header>
+					</nav>
+					<nav class="tablet">
+						<ul> 
+							<li>
+								<div class="dropdown">
+									<div onclick="myFunction('tabletDropdown1')" class="dropbtn">Learn</div>
+									<div id="tabletDropdown1" class="dropdown-content">
+										<a href="./about.html">About</a>
+										<a href="./activities.html">Activities</a>
+										<a href="./impact.html">Impact</a>
+										<a href="./contact.html">Contact</a>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="dropdown">
+									<div onclick="myFunction('tabletDropdown2')" class="dropbtn">Get Involved</div>
+									<div id="tabletDropdown2" class="dropdown-content">
+										<a href="./participate.html">Participate</a>
+										<a href="./volunteer.html">Volunteer</a>
+										<a href="./donate.html">Donate</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</nav>
+					<nav class="mobile">
+						<ul>
+							<li>
+								<div class="dropdown">
+									<div onclick="myFunction('mobileDropdown')" class="dropbtn">Menu</div>
+									<div id="mobileDropdown" class="dropdown-content">
+										<a href="./index.html">Home</a>
+										<a href="./about.html">About</a>
+										<a href="./activities.html">Activities</a>
+										<a href="./impact.html">Impact</a>
+										<a href="./participate.html">Participate</a>
+										<a href="./volunteer.html">Volunteer</a>
+										<a href="./donate.html">Donate</a>
+										<a href="./contact.html">Contact</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+						
+					</nav>
+				</header>
 		<main>
-			<section class="banner">
+			<section class="carousel">
 
 				<!-- Fotorama image carousel.  See http://fotorama.io/customize/ for options.-->
 				<div class="fotorama"

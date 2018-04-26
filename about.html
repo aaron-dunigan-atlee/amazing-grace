@@ -7,32 +7,80 @@
     <link rel="icon" type="image/png" href="./resources/images/favicon.ico" />
     
     <link rel="stylesheet" type="text/css" href="./resources/css/reset.css" />
-	<link rel="stylesheet" type="text/css" href="./resources/css/style.css" />
-	<link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./resources/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./resources/css/menu.css" />
+    <link rel="stylesheet" type="text/css" href="./resources/css/tablet.css" />
+    <link rel="stylesheet" type="text/css" href="./resources/css/mobile.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700&amp;subset=latin-ext" rel="stylesheet">
+    
+    <script src="./resources/scripts/menu.js"></script>
+
     <title>Amazing Grace of Cape Cod--About us</title>
 </head>
 <body>
     <header>
-        <a href="./index.html"><img class="logo" src="./resources/images/pixel.png"/></a>
+        <a href="./index.html"><img class="logo-spacer" src="./resources/images/pixel.png"/></a>
         <nav class="desktop">
-            <div class="container">
-                <ul>
-                    <li><a href="./about.html">About</a></li>
-                    <li><a href="./activities.html">Activities</a></li>
-                    <li><a href="./impact.html">Impact</a></li>
-                    <li><a href="./participate.html">Participate</a></li>
-                    <li><a href="./volunteer.html">Volunteer</a></li>
-                    <li><a href="./donate.html">Donate</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                </ul>
-            </div>
+            <ul>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./activities.html">Activities</a></li>
+                <li><a href="./impact.html">Impact</a></li>
+                <li><a href="./participate.html">Participate</a></li>
+                <li><a href="./volunteer.html">Volunteer</a></li>
+                <li><a href="./donate.html">Donate</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+            
+        </nav>
+        <nav class="tablet">
+            <ul> 
+                <li>
+                    <div class="dropdown">
+                        <div onclick="myFunction('tabletDropdown1')" class="dropbtn">Learn</div>
+                        <div id="tabletDropdown1" class="dropdown-content">
+                            <a href="./about.html">About</a>
+                            <a href="./activities.html">Activities</a>
+                            <a href="./impact.html">Impact</a>
+                            <a href="./contact.html">Contact</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown">
+                        <div onclick="myFunction('tabletDropdown2')" class="dropbtn">Get Involved</div>
+                        <div id="tabletDropdown2" class="dropdown-content">
+                            <a href="./participate.html">Participate</a>
+                            <a href="./volunteer.html">Volunteer</a>
+                            <a href="./donate.html">Donate</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <nav class="mobile">
+            <ul>
+                <li>
+                    <div class="dropdown">
+                        <div onclick="myFunction('mobileDropdown')" class="dropbtn">Menu</div>
+                        <div id="mobileDropdown" class="dropdown-content">
+                            <a href="./index.html">Home</a>
+                            <a href="./about.html">About</a>
+                            <a href="./activities.html">Activities</a>
+                            <a href="./impact.html">Impact</a>
+                            <a href="./participate.html">Participate</a>
+                            <a href="./volunteer.html">Volunteer</a>
+                            <a href="./donate.html">Donate</a>
+                            <a href="./contact.html">Contact</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            
         </nav>
     </header>
     <main>
-        <section class="banner">
-            <div class="banner-image">
-                <img src="./resources/images/banner.jpg"/>
-            </div>
+        <section class="banner" style="background-image:url(./resources/images/banner.jpg);"> 
             <div class="banner-text">
                 <h2>About Amazing Grace of Cape Cod</h2>
                 <h3></h3>
@@ -53,7 +101,7 @@
             </div>
             <div class="sub-section">
                 <h2>Mission and goals</h2>
-                <p>The mission of Amazing Grace of Cape Cod is to operate programs for children who currently have, or have had, a family member 
+                <p>The mission of Amazing Grace of Cape Cod, Inc. is to operate programs for children who currently have, or have had, a family member 
                     incarcerated. These programs will demonstrate unconditional love, with the intention of breaking the chain of intergenerational 
                     incarceration.</p>
                 <p>These Cape Cod children will be:</p>
@@ -68,7 +116,7 @@
             </div>
             <div class="sub-section">
                 <h2>Sponsors</h2>
-                <p>This is a cost ­free program for the children, subsidized entirely by donations and a generous scholarship from the South Shore 
+                <p>The week of camp is a cost-­free program for the children, subsidized entirely by donations and a generous scholarship from the South Shore 
                     YMCA to reduce our cost for each camper. Amazing Grace began in 2014 when caring individuals at Saint Mary’s Episcopal Church, 
                     Saint David’s Episcopal Church, and Southeastern Open Door Mission decided to work to break the cycle of intergenerational incarceration. 
                     It continues through the generosity of area churches, organizations, businesses, and individuals like you.</p>
