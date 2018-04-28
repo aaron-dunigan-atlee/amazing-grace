@@ -6,4 +6,18 @@
     .tablet {
         display: block;
     }
+
+    .billboard {
+        left: 5%;
+        bottom: 15%;
+        max-width: 380px;
+      }
+      
+      .billboard h1 {
+        font-size: 1.5rem;
+      }
+      
+      .billboard h3 {
+        font-size: 1rem;
+      }
   }

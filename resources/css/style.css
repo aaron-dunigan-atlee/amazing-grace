@@ -31,6 +31,7 @@ body {
   line-height: 1.5;
   width: 100%;
   background-color: var(--logo-yellow);
+  
 }
 
 .mobile {
@@ -205,23 +206,52 @@ main li {
 
 /* Footer section */
 footer {
-  background-color: var(--logo-yellow);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 1rem;
+  justify-content: center;
+  background-image: url(../images/footer_logo_full.png);
+  background-size: initial;
+  background-position: right;
+  height: 200px;
+}
+
+.footer-text-container {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-text {
-  border: 1px solid var(--logo-orange);
   border-radius: 15px;
   padding: 1rem;
   text-align: center;
   font-size: 0.75rem;
-  width: 960px;
-  max-width: 80%;
+  border: 1px solid var(--logo-shadow);
+  color: var(--logo-shadow);
 }
 
 footer a {
   color: var(--warm-accent-text);
+}
+
+/* Lighthouse graphic fills in empty right margin for large screens. */
+@media only screen and (min-width: 1300px) {
+  body {
+    background-image: url(../images/footer_logo_mono.png);
+    background-position: bottom right;
+    background-size: initial;
+    background-repeat: no-repeat;
+  }
+
+  footer {
+    background-color: transparent;
+    background-image: none;
+    height: 128px;
+  }
+
+  .footer-text {
+    color: var(--logo-orange);
+    border-color: var(--logo-orange);
 }

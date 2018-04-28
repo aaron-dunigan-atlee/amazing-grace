@@ -1,5 +1,5 @@
 /* Styles for mobile screens */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
   .mobile {
     display: block;
   }
@@ -22,5 +22,23 @@
     height: auto;
   }
 
+  .billboard {
+    position: static;
+    background-color: transparent;
+    max-width: 100%;
+    text-align: center;
+  }
+  .billboard h1,  
+  .billboard h3 {
+    color: var(--dark-accent-text);
+  }
+
+  footer {
+    height: 256px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    justify-content: flex-start;
+  }
+ 
   
 }
