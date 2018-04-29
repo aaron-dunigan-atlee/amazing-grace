@@ -1,6 +1,7 @@
 /* Fotorama carousel section */
 .carousel {
   position: relative;
+  width: 100%;
 }
 
 .billboard {
@@ -29,14 +30,16 @@
 }
 
 .page-launcher {
+  position: relative;
   border: 2px solid var(--logo-orange);
   border-radius: 25px;
-  height: fit-content;
-  width: fit-content;
+  height: 200px;
+  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 1rem;
+  overflow: hidden;
 }
 
 .page-launcher img {
@@ -58,6 +61,7 @@
   text-align: center;
   position: absolute;
   opacity: 0;
+  max-width: 100%;
 }
 
 .page-launcher:hover > .caption {

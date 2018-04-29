@@ -98,6 +98,7 @@ header {
   background-position: left;
   background-size: contain;
   height: 80px;
+  width: 100%;
   background-color: white;
 }
 
@@ -105,14 +106,8 @@ header {
   width: 80px;
   height: auto;
   padding-left: 8px;
+  margin-right: 50px;
 }
-
-.logo-spacer {
-  width: 50px;
-  height: 50px;
-  visibility: hidden;
-}
-
 
 header h3 {
   color: var(--warm-accent-text);
@@ -157,7 +152,13 @@ nav li {
 }
 
 
+
 /* Main section */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* Banner section */
 .banner {
@@ -170,11 +171,34 @@ nav li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: white;
 }  
 
 .banner-text {
   max-width: 960px;
   text-align: center;
+  text-shadow: 2px 2px 10px;
+  position: absolute;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-image img {  
+  max-width: 100%; 
+  width: 100%;
+  height: auto;
+  position: absolute;  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  margin: auto;
+  opacity: 0.4;
 }
 
 /* Content text */
@@ -185,13 +209,11 @@ main p {
 }
 
 .page-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  max-width: 960px;
 }
 
 .sub-section {
-  max-width: 960px;
   margin: 0.5rem 1rem;
 }
 
@@ -202,6 +224,28 @@ main ul {
 
 main li {
   margin-bottom: 0.5rem;
+}
+
+/* Thanks to Ben Marshall at https://benmarshall.me/responsive-iframes/ for this trick to maintain aspect ratio of iframes. */
+.iframe-container-container {
+  max-width: 600px;
+  display: block;
+}
+
+.iframe-container {
+  padding-right: 0;
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 75%; /* padding-bottom uses percent of *width* of containing block */
+}
+ 
+.iframe-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Footer section */
@@ -254,4 +298,5 @@ footer a {
   .footer-text {
     color: var(--logo-orange);
     border-color: var(--logo-orange);
+  }
 }
