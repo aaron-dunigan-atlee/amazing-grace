@@ -1,5 +1,6 @@
 Banner photos should be wide (>=1600px), vertically centered around something of interest.  
-Banner height is 80px so only the middle 80px get shown on large screens.
+Banner height is 200px so only the middle 200px get shown on largest screens.
+Aspect ratio should be 2:1 so that no whitespace appears on mobile devices.
 
 Images for page launchers (in the gallery on main page) should be 200x200px or larger, and square.
 
