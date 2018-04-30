@@ -11,6 +11,8 @@
   left: 5%;
   max-width: 560px;
   padding-left: 1rem;
+  border-radius: 15px;
+  padding-bottom: 0.5rem;
 }
 
 .billboard h1, .billboard h3 {

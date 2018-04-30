@@ -31,7 +31,9 @@
     background-color: transparent;
     max-width: 100%;
     text-align: center;
+    padding-right: 1rem;
   }
+  
   .billboard h1,  
   .billboard h3 {
     color: var(--dark-accent-text);
