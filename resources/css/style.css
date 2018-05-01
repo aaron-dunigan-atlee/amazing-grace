@@ -100,6 +100,7 @@ header {
   height: 80px;
   width: 100%;
   background-color: white;
+  
 }
 
 .logo-text {
@@ -257,6 +258,7 @@ footer {
   background-image: url(../images/footer_logo_full.png);
   background-size: initial;
   background-position: right;
+  background-repeat: no-repeat;
   height: 200px;
 }
 
@@ -278,25 +280,4 @@ footer {
 
 footer a {
   color: var(--warm-accent-text);
-}
-
-/* Lighthouse graphic fills in empty right margin for large screens. */
-@media only screen and (min-width: 1300px) {
-  body {
-    background-image: url(../images/footer_logo_mono.png);
-    background-position: bottom right;
-    background-size: initial;
-    background-repeat: no-repeat;
-  }
-
-  footer {
-    background-color: transparent;
-    background-image: none;
-    height: 128px;
-  }
-
-  .footer-text {
-    color: var(--logo-orange);
-    border-color: var(--logo-orange);
-  }
 }
