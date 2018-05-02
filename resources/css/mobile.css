@@ -15,12 +15,6 @@
   html {
     font-size: 12px;
   }
-  
-  header {
-    background-image: none;
-    background-color: var(--logo-yellow);
-    height: auto;
-  }
 
   .banner {
     height: 160px;
