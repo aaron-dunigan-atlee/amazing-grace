@@ -41,8 +41,7 @@
 
   footer {
     height: 256px;
-    background-repeat: no-repeat;
-    background-position: bottom right;
+    
     justify-content: flex-start;
   }
  
