@@ -152,7 +152,9 @@ nav li {
   margin: 0.4rem 0;
 }
 
-
+strong {
+  font-weight: bold;
+}
 
 /* Main section */
 main {
