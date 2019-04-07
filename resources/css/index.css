@@ -18,6 +18,7 @@
 .billboard h1, .billboard h3 {
   color: var(--logo-yellow);
 }
+
 /* Gallery section */
 .site-map {
   width: 100%;
@@ -68,6 +69,14 @@
 
 .page-launcher:hover > .caption {
   opacity: 1;
+}
+
+.sticky .caption {
+  opacity: 1;
+}
+
+.sticky img {
+  opacity: 0.2
 }
 
 .gallery h2 {
