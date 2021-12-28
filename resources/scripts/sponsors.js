@@ -20,22 +20,32 @@ function init()
   })
   sponsorSpreadsheetUrls.forEach((sheet) =>
   {
+    addSponsorsTab(sheet.year)
     Papa.parse(sheet.url, {
       download: true,
       header: true,
       complete: function (results)
       {
-        addSponsorsTab(sheet.year, results.data)
+        addSponsorsData(sheet.year, results.data)
       }
     })
   })
 
 }
 
-function addSponsorsTab(year, data)
+function addSponsorsTab(year)
 {
   console.log("Adding tab for year %s", year)
-  $('#sponsors-nav').append('<li class="nav-item"><a class="nav-link active" href="#">' + year + '</a> </li>')
+  $('#sponsors-nav').append('<li class="nav-item" role="presentation">'
+    + '<a class="nav-link" id="tab-' + year + '" href="#sponsors-' + year + '" data-toggle="tab" role="tab" aria-controls="sponsors-' + year + '" aria-selected="false">'
+    + year + '</a> </li>')
+}
+
+function addSponsorsData(year, data)
+{
+  $('#sponsors-tab-content').append(
+    '<div class="tab-pane fade show active" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '">Content for year ' + year + '</div>'
+  )
 }
 
 function logData(data)
