@@ -34,6 +34,7 @@ function init()
 
 function addSponsorsTab(year, data)
 {
+  console.log("Adding tab for year %s", year)
   $('#sponsors-nav').append('<li class="nav-item"><a class="nav-link active" href="#">' + year + '</a> </li>')
 }
 
