@@ -47,15 +47,34 @@ function addSponsorsTab(year, show)
   $('#sponsors-tab-content').append(
     '<div class="tab-pane fade'
     + (show ? ' show active' : '')
-    + '" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '"></div>'
+    + '" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '"><div class="sponsors-container"></div></div>'
   )
 }
 
 function addSponsorsData(year, data)
 {
   console.log("Adding data for year %s", year)
-  $("#sponsors-" + year).text('Tab content for year ' + year)
-
+  var container = $("#sponsors-" + year + ' .sponsors-container')
+  for (var i = 0; i < data.length; i++)
+  {
+    var row = data[i]
+    if (row['Sponsor Name'])
+    {
+      container.append(
+        $('<div></div>')
+          .addClass('sponsor-row')
+          .append(
+            $('<div></div>')
+              .addClass('sponsor-logo')
+              .html('<a href="' + (row['Website Link'] || '#') + '"><img src="' + (row['Logo Link'] || '') + '" alt=""></img></a>')
+            ,
+            $('<div></div>')
+              .addClass('sponsor-name')
+              .text(row['Sponsor Name'])
+          )
+      )
+    }
+  }
 }
 
 function logData(data)
