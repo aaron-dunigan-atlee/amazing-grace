@@ -45,7 +45,7 @@ function addSponsorsData(year, data)
 {
   console.log("Adding data for year %s", year)
   $('#sponsors-tab-content').append(
-    '<div class="tab-pane fade" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '">Content for year ' + year + '</div>'
+    '<div class="tab-pane fade" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '">New content for year ' + year + '</div>'
   )
 }
 
