@@ -9,6 +9,10 @@
 }
 
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-    border: 1px solid transparent;
+    /* border: 1px solid transparent; */
     color: var(--logo-orange);
+}
+
+.nav-tabs {
+  border-bottom: 1px solid var(--logo-orange);
 }

@@ -211,12 +211,12 @@ main p {
   margin: 0.5rem 1rem;
 }
 
-main ul {
+#gdoc-content ul {
   list-style: disc;
   margin-left: 1rem;
 }
 
-main li {
+#gdoc-content li {
   margin-bottom: 0.5rem;
 }
 
