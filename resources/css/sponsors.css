@@ -9,8 +9,8 @@
 }
 
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-    /* border: 1px solid transparent; */
-    color: var(--logo-orange);
+  border: inherit;
+  color: var(--logo-orange);
 }
 
 .nav-tabs {
