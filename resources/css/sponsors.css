@@ -26,4 +26,9 @@
 
 .sponsor-logo img {
   max-width: 100%;
+  max-height: 100px;
+}
+
+.sponsor-row {
+  min-height: 50px;
 }

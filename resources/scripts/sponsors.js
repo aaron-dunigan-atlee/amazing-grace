@@ -36,7 +36,7 @@ function addSponsorsTab(year, show)
   $('#sponsors-tab-content').append(
     '<div class="tab-pane fade'
     + (show ? ' show active' : '')
-    + '" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '"><div class="sponsors-container"></div></div>'
+    + '" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '"><div class="sponsors-container p-3"></div></div>'
   )
 }
 
@@ -51,14 +51,14 @@ function addSponsorsData(year, data)
     {
       container.append(
         $('<div></div>')
-          .addClass('sponsor-row d-flex mb-2')
+          .addClass('sponsor-row d-flex mb-3 align-content-center')
           .append(
             $('<div></div>')
-              .addClass('sponsor-logo')
+              .addClass('sponsor-logo my-auto')
               .html('<a href="' + (row['Website Link'] || '#') + '" target="_blank"><img src="' + (row['Logo Link'] || '') + '" alt=""></img></a>')
             ,
             $('<div></div>')
-              .addClass('sponsor-name flex-grow-1 m-2')
+              .addClass('sponsor-name flex-grow-1 p-3')
               .text(row['Sponsor Name'])
           )
       )
