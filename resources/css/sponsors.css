@@ -1,0 +1,14 @@
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: var(--logo-orange);
+    background-color: var(--logo-yellow);
+    border-color: var(--logo-orange) var(--logo-orange) var(--logo-yellow);
+}
+
+.nav-tabs .nav-link {
+  color:var(--dark-accent-text)
+}
+
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border: 1px solid transparent;
+    color: var(--logo-orange);
+}

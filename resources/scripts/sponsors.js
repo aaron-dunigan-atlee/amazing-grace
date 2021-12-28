@@ -20,7 +20,7 @@ function init()
   })
   sponsorSpreadsheetUrls.forEach((sheet, index) =>
   {
-    addSponsorsTab(sheet.year, index === 1)
+    addSponsorsTab(sheet.year, index === 0)
     Papa.parse(sheet.url, {
       download: true,
       header: true,
