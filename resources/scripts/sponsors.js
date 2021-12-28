@@ -18,18 +18,7 @@ function init()
       addToPage(results.data)
     }
   })
-  sponsorSpreadsheetUrls.forEach((sheet, index) =>
-  {
-    addSponsorsTab(sheet.year, index === 0)
-    Papa.parse(sheet.url, {
-      download: true,
-      header: true,
-      complete: function (results)
-      {
-        addSponsorsData(sheet.year, results.data)
-      }
-    })
-  })
+
 
 }
 
@@ -93,6 +82,19 @@ function addToPage(data)
       div.innerHTML += data[i].content;
     }
   }
+
+  sponsorSpreadsheetUrls.forEach((sheet, index) =>
+  {
+    addSponsorsTab(sheet.year, index === 0)
+    Papa.parse(sheet.url, {
+      download: true,
+      header: true,
+      complete: function (results)
+      {
+        addSponsorsData(sheet.year, results.data)
+      }
+    })
+  })
 }
 
 function getMeta(metaName)
