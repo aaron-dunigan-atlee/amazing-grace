@@ -9,7 +9,7 @@
 }
 
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-  border: inherit;
+  border-color: var(--logo-yellow) var(--logo-yellow) var(--logo-orange);
   color: var(--logo-orange);
 }
 
