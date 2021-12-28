@@ -18,35 +18,38 @@ function init()
       addToPage(results.data)
     }
   })
-  sponsorSpreadsheetUrls.forEach((sheet) =>
+  sponsorSpreadsheetUrls.forEach((sheet, index) =>
   {
-    addSponsorsTab(sheet.year)
+    addSponsorsTab(sheet.year, index === 1)
     Papa.parse(sheet.url, {
       download: true,
       header: true,
       complete: function (results)
       {
-        addSponsorsData(sheet.year, results.data)
+        addSponsorsData(sheet.year, results.data, index === 1)
       }
     })
   })
 
 }
 
-function addSponsorsTab(year)
+function addSponsorsTab(year, show)
 {
   console.log("Adding tab for year %s", year)
   $('#sponsors-nav').append('<li class="nav-item" role="presentation">'
-    + '<a class="nav-link" id="tab-' + year + '" href="#sponsors-' + year + '" data-toggle="tab" role="tab" aria-controls="sponsors-' + year + '" aria-selected="false">'
+    + '<a class="nav-link" id="tab-' + year + '" href="#sponsors-' + year + '" data-toggle="tab" role="tab" aria-controls="sponsors-' + year + '" aria-selected="' + show + '">'
     + year + '</a> </li>')
 }
 
-function addSponsorsData(year, data)
+function addSponsorsData(year, data, show)
 {
   console.log("Adding data for year %s", year)
   $('#sponsors-tab-content').append(
-    '<div class="tab-pane fade" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '">New content for year ' + year + '</div>'
+    '<div class="tab-pane fade"'
+    + (show ? ' show active' : '')
+    + ' id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '">New content for year ' + year + '</div>'
   )
+  $('#sponsors-' + year).attr('')
 }
 
 function logData(data)
