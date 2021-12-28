@@ -1,5 +1,9 @@
 var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1mI0Prj20RwR-9bMV_wnmKgavspKl7jg6cvYrOLi61Fg/pub?output=csv';
-
+var sponsorSpreadsheetUrls = {
+  '2021': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=541868499&single=true&output=csv',
+  '2020': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=0&single=true&output=csv',
+  '2019': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=374590758&single=true&output=csv',
+}
 
 function init()
 {
@@ -14,6 +18,23 @@ function init()
       addToPage(results.data)
     }
   })
+  for (var year in sponsorSpreadsheetUrls)
+  {
+    Papa.parse(sponsorSpreadsheetUrls[year], {
+      download: true,
+      header: true,
+      complete: function (results)
+      {
+        addSponsorsTab(year, results.data)
+      }
+    })
+  }
+
+}
+
+function addSponsorsTab(year, data)
+{
+  $('#sponsors-nav').append('<li class="nav-item"><a class="nav-link active" href="#">' + year + '</a> </li>')
 }
 
 function logData(data)
