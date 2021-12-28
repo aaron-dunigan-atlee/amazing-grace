@@ -51,14 +51,14 @@ function addSponsorsData(year, data)
     {
       container.append(
         $('<div></div>')
-          .addClass('sponsor-row')
+          .addClass('sponsor-row d-flex mb-2')
           .append(
             $('<div></div>')
               .addClass('sponsor-logo')
-              .html('<a href="' + (row['Website Link'] || '#') + '"><img src="' + (row['Logo Link'] || '') + '" alt=""></img></a>')
+              .html('<a href="' + (row['Website Link'] || '#') + '" target="_blank"><img src="' + (row['Logo Link'] || '') + '" alt=""></img></a>')
             ,
             $('<div></div>')
-              .addClass('sponsor-name')
+              .addClass('sponsor-name flex-grow-1 m-2')
               .text(row['Sponsor Name'])
           )
       )

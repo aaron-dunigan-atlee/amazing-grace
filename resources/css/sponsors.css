@@ -16,3 +16,11 @@
 .nav-tabs {
   border-bottom: 1px solid var(--logo-orange);
 }
+
+.sponsor-logo {
+  width: 150px;
+}
+
+.sponsor-logo img {
+  max-width: 100%;
+}
