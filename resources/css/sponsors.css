@@ -22,13 +22,18 @@
 
 .sponsor-logo {
   width: 150px;
+  max-height: 100px;
 }
 
 .sponsor-logo img {
   max-width: 100%;
-  max-height: 100px;
+  max-height: 100%;
 }
 
-.sponsor-row {
+/* .sponsor-row {
   min-height: 50px;
+} */
+
+.sponsor-name {
+  font-size: x-large;
 }
