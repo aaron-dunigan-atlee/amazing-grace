@@ -69,7 +69,7 @@ function addSponsorsData(year, data)
           .addClass('sponsor-row d-flex mb-3')
           .append(
             $('<div></div>')
-              .addClass('sponsor-logo d-flex justify-content-center')
+              .addClass('sponsor-logo d-flex justify-content-center align-items-center')
               .html('<a href="' + (row['Website Link'] || '#') + '" target="_blank"><img src="' + (row['Logo Link'] || '') + '" alt=""></img></a>')
             ,
             $('<div></div>')
