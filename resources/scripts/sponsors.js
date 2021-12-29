@@ -47,14 +47,29 @@ function addSponsorsData(year, data)
   for (var i = 0; i < data.length; i++)
   {
     var row = data[i]
-    if (row['Sponsor Name'])
+    // Sponsorship level categories have their own row
+    if (row['Sponsorship Level'] && !row['Sponsor Name'])
+    {
+      container.append(
+        $('<div></div>')
+          .addClass('sponsorship-level-row mb-2 ')
+          .append(
+            $('<h3></h3>')
+              .addClass('sponsorship-level')
+              .text(row['Sponsorship Level'])
+          )
+      )
+    }
+
+    // Detect sponsor rows
+    if (!row['Sponsorship Level'] && row['Sponsor Name'])
     {
       container.append(
         $('<div></div>')
           .addClass('sponsor-row d-flex mb-3 align-content-center')
           .append(
             $('<div></div>')
-              .addClass('sponsor-logo my-auto')
+              .addClass('sponsor-logo m-auto')
               .html('<a href="' + (row['Website Link'] || '#') + '" target="_blank"><img src="' + (row['Logo Link'] || '') + '" alt=""></img></a>')
             ,
             $('<div></div>')
