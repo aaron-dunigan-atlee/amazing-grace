@@ -52,11 +52,14 @@ function addSponsorsData(year, data)
     {
       container.append(
         $('<div></div>')
-          .addClass('sponsorship-level-row mb-2 ')
+          .addClass('sponsorship-level-row mb-2 gallery')
           .append(
-            $('<h3></h3>')
-              .addClass('sponsorship-level')
-              .text(row['Sponsorship Level'])
+            '<div class="sticky page-launcher">'
+            //+ '<img src="./resources/images/page-launchers/download-app.jpg" alt="" />'
+            + '<div class="caption">'
+            + '<h2>' + row['Sponsorship Level'] + '</h2>'
+            + ' </div>'
+            + '</div>'
           )
       )
     }
@@ -64,18 +67,15 @@ function addSponsorsData(year, data)
     // Detect sponsor rows
     if (!row['Sponsorship Level'] && row['Sponsor Name'])
     {
-      container.append(
-        $('<div></div>')
-          .addClass('sponsor-row d-flex mb-3')
-          .append(
-            $('<div></div>')
-              .addClass('sponsor-logo d-flex justify-content-center align-items-center')
-              .html('<a href="' + (row['Website Link'] || '#') + '" target="_blank"><img src="' + (row['Logo Link'] || '') + '" alt=""></img></a>')
-            ,
-            $('<div></div>')
-              .addClass('sponsor-name flex-grow-1 p-3 my-auto')
-              .text(row['Sponsor Name'])
-          )
+      container.children('.sponsorship-level-row').last().append(
+        '<a href="' + (row['Website Link'] || '#') + '" target="_blank">'
+        + '<div class="sticky page-launcher">'
+        + '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
+        + '<div class="caption">'
+        + '<h2>' + row['Sponsor Name'] + '</h2>'
+        + ' </div>'
+        + '</div>'
+        + '</a>'
       )
     }
   }
