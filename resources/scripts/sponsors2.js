@@ -52,7 +52,7 @@ function addSponsorsData(year, data)
     {
       container.append(
         $('<div></div>')
-          .addClass('sponsorship-level-row mb-2 gallery')
+          .addClass('sponsorship-level-row mb-2')
           .append(
             '<div class="sticky page-launcher">'
             //+ '<img src="./resources/images/page-launchers/download-app.jpg" alt="" />'

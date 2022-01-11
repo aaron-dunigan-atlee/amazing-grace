@@ -48,7 +48,7 @@
 
 .sponsor-card {
   position: relative;
-  border: 2px solid var(--logo-orange);
+  border: 1px solid var(--logo-orange);
   border-radius: 25px;
   height: 200px;
   width: 200px;
