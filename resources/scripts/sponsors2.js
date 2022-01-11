@@ -57,7 +57,7 @@ function addSponsorsData(year, data)
             '<div class="sticky page-launcher">'
             //+ '<img src="./resources/images/page-launchers/download-app.jpg" alt="" />'
             + '<div class="caption">'
-            + '<h2>' + row['Sponsorship Level'] + '</h2>'
+            + '<h3>' + row['Sponsorship Level'] + '</h3>'
             + ' </div>'
             + '</div>'
           )
@@ -69,7 +69,7 @@ function addSponsorsData(year, data)
     {
       container.children('.sponsorship-level-row').last().append(
         '<a href="' + (row['Website Link'] || '#') + '" target="_blank">'
-        + '<div class="sticky page-launcher">'
+        + '<div class="sponsor-card">'
         + '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
         + '<div class="caption">'
         + '<h2>' + row['Sponsor Name'] + '</h2>'

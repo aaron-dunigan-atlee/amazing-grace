@@ -38,15 +38,15 @@
 }
 
 
-.gallery {
+.sponsorship-level-row {
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
   margin: 1rem auto 0 auto;
   flex-wrap: wrap;
   max-width: 960px;
 }
 
-.page-launcher {
+.sponsor-card {
   position: relative;
   border: 2px solid var(--logo-orange);
   border-radius: 25px;
@@ -59,7 +59,7 @@
   overflow: hidden;
 }
 
-.page-launcher img {
+.sponsor-card img {
   max-height: 100%;
   max-width: 100%;
   height: 100%;
@@ -69,11 +69,11 @@
   opacity: 1;
 }
 
-.page-launcher:hover > img {
+.sponsor-card:hover > img {
   opacity: 0.2;
 }
 
-.page-launcher .caption {
+.sponsor-card .caption {
   color: var(--logo-orange);
   text-align: center;
   position: absolute;
@@ -81,7 +81,7 @@
   max-width: 100%;
 }
 
-.page-launcher:hover > .caption {
+.sponsor-card:hover > .caption {
   opacity: 1;
 }
 
@@ -93,6 +93,6 @@
   opacity: 0.2
 }
 
-.gallery h2 {
+.sponsorship-level-row h3 {
   color: var(--logo-orange);
 }
