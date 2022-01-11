@@ -80,7 +80,8 @@
   max-width: 100%;
 }
 
-.sponsor-card:hover > .caption {
+.sponsor-card:hover > .caption,
+.sponsor-card.no-logo:hover > .caption {
   opacity: 1;
 }
 
@@ -92,8 +93,9 @@
   opacity: 1;
 }
 
-.sticky img {
-  opacity: 0.2
+.sponsor-card.sticky img {
+  opacity: 0.2;
+  width: 100%;
 }
 
 .sponsor-level.caption {
