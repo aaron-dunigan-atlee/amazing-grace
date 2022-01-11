@@ -56,8 +56,8 @@ function addSponsorsData(year, data)
           .append(
             '<div class="sticky sponsor-card">'
             + '<img src="./resources/images/logo-lighthouse.png" alt="" />'
-            + '<div class="caption">'
-            + '<h3>' + row['Sponsorship Level'] + '</h3>'
+            + '<div class="caption sponsor-level">'
+            + '<h4>' + row['Sponsorship Level'] + '</h4>'
             + ' </div>'
             + '</div>'
           )
