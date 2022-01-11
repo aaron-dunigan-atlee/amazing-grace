@@ -54,7 +54,7 @@ function addSponsorsData(year, data)
         $('<div></div>')
           .addClass('sponsorship-level-row mb-2')
           .append(
-            '<div class="sticky page-launcher">'
+            '<div class="sticky sponsor-card">'
             //+ '<img src="./resources/images/page-launchers/download-app.jpg" alt="" />'
             + '<div class="caption">'
             + '<h3>' + row['Sponsorship Level'] + '</h3>'
@@ -72,7 +72,7 @@ function addSponsorsData(year, data)
         + '<div class="sponsor-card">'
         + '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
         + '<div class="caption">'
-        + '<h2>' + row['Sponsor Name'] + '</h2>'
+        + '<h4>' + row['Sponsor Name'] + '</h4>'
         + ' </div>'
         + '</div>'
         + '</a>'
