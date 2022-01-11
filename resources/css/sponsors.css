@@ -57,6 +57,7 @@
   align-items: center;
   margin: 1rem;
   overflow: hidden;
+  padding: 5px;
 }
 
 .sponsor-card img {
@@ -65,7 +66,6 @@
   height: auto;
   width: auto;
   display: block;
-  border-radius: 25px;
   opacity: 1;
 }
 
