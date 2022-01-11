@@ -98,6 +98,6 @@
   width: 100%;
 }
 
-.sponsor-level.caption {
+.sponsor-level.caption h4 {
   color: var(--logo-orange);
 }
