@@ -36,7 +36,7 @@ function addSponsorsTab(year, show)
   $('#sponsors-tab-content').append(
     '<div class="tab-pane fade'
     + (show ? ' show active' : '')
-    + '" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '"><div class="sponsors-container p-3"></div></div>'
+    + '" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '"><div class="sponsors-container"></div></div>'
   )
 }
 
@@ -52,7 +52,7 @@ function addSponsorsData(year, data)
     {
       container.append(
         $('<div></div>')
-          .addClass('sponsorship-level-row mb-2')
+          .addClass('sponsorship-level-row')
           .append(
             '<div class="sticky sponsor-card">'
             + '<img src="./resources/images/logo-lighthouse.png" alt="" />'
@@ -69,7 +69,7 @@ function addSponsorsData(year, data)
     {
       container.children('.sponsorship-level-row').last().append(
         '<a href="' + (row['Website Link'] || '#') + '" target="_blank">'
-        + '<div class="sponsor-card">'
+        + '<div class="sponsor-card' + (row['Logo Link'] ? '' : ' no-logo') + '">'
         + '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
         + '<div class="caption">'
         + '<h4>' + row['Sponsor Name'] + '</h4>'

@@ -41,7 +41,6 @@
 .sponsorship-level-row {
   display: flex;
   justify-content: left;
-  margin: 1rem auto 0 auto;
   flex-wrap: wrap;
   max-width: 960px;
 }
@@ -55,9 +54,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin: 0.5rem;
   overflow: hidden;
-  padding: 5px;
+  padding: 0.5rem;
 }
 
 .sponsor-card img {
@@ -83,6 +82,10 @@
 
 .sponsor-card:hover > .caption {
   opacity: 1;
+}
+
+.sponsor-card.no-logo .caption {
+  opacity: 0.75;
 }
 
 .sticky .caption {
