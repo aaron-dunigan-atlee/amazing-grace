@@ -7,9 +7,7 @@ var sponsorSpreadsheetUrls = [
 
 function init()
 {
-  // 8.15.21 Switched from tabletop to Papa Parse as tabletop is now broken
-  // See https://github.com/jsoma/tabletop
-  // and https://www.papaparse.com/docs
+  // See https://www.papaparse.com/docs
   Papa.parse(publicSpreadsheetUrl, {
     download: true,
     header: true,
@@ -18,8 +16,6 @@ function init()
       addToPage(results.data)
     }
   })
-
-
 }
 
 function addSponsorsTab(year, show)
@@ -36,7 +32,7 @@ function addSponsorsTab(year, show)
   $('#sponsors-tab-content').append(
     '<div class="tab-pane fade'
     + (show ? ' show active' : '')
-    + '" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '"><div class="sponsors-container p-3"></div></div>'
+    + '" id="sponsors-' + year + '" role="tabpanel" aria-labelledby="tab-' + year + '"><div class="sponsors-container"></div></div>'
   )
 }
 
@@ -52,11 +48,14 @@ function addSponsorsData(year, data)
     {
       container.append(
         $('<div></div>')
-          .addClass('sponsorship-level-row mb-2 ')
+          .addClass('sponsorship-level-row')
           .append(
-            $('<h3></h3>')
-              .addClass('sponsorship-level')
-              .text(row['Sponsorship Level'])
+            '<div class="sticky sponsor-card">'
+            + '<img src="./resources/images/logo_lighthouse.png" alt="" />'
+            + '<div class="caption sponsor-level">'
+            + '<h4>' + row['Sponsorship Level'] + '</h4>'
+            + ' </div>'
+            + '</div>'
           )
       )
     }
@@ -64,18 +63,15 @@ function addSponsorsData(year, data)
     // Detect sponsor rows
     if (!row['Sponsorship Level'] && row['Sponsor Name'])
     {
-      container.append(
-        $('<div></div>')
-          .addClass('sponsor-row d-flex mb-3')
-          .append(
-            $('<div></div>')
-              .addClass('sponsor-logo d-flex justify-content-center align-items-center')
-              .html('<a href="' + (row['Website Link'] || '#') + '" target="_blank"><img src="' + (row['Logo Link'] || '') + '" alt=""></img></a>')
-            ,
-            $('<div></div>')
-              .addClass('sponsor-name flex-grow-1 p-3 my-auto')
-              .text(row['Sponsor Name'])
-          )
+      container.children('.sponsorship-level-row').last().append(
+        '<a href="' + (row['Website Link'] || '#') + '" target="_blank">'
+        + '<div class="sponsor-card' + (row['Logo Link'] ? '' : ' no-logo') + '">'
+        + '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
+        + '<div class="caption">'
+        + '<h4>' + row['Sponsor Name'] + '</h4>'
+        + ' </div>'
+        + '</div>'
+        + '</a>'
       )
     }
   }
