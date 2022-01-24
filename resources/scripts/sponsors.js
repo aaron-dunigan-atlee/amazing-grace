@@ -70,7 +70,7 @@ function addSponsorsData(data)
     })
     for (var level in sponsorshipLevels)
     {
-      container.children('.sponsorship-level-row').last().append(levelRows[level])
+      container.append(levelRows[level])
     }
 
     for (var i = 0; i < data.length; i++)
