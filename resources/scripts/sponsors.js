@@ -37,10 +37,16 @@ function addSponsorsTab(year, show)
   )
 }
 
+var DATA
+
 function addSponsorsData(data)
 {
-  console.log(data[0])
+  DATA = data
+  var years = []
+  for (var y = 2014; data[0].hasOwnProperty(y); y++) { years.push(y) }
+  console.log(years)
   return;
+
   addSponsorsTab(sheet.year, index === 0)
   var container = $("#sponsors-" + year + ' .sponsors-container')
   for (var i = 0; i < data.length; i++)
