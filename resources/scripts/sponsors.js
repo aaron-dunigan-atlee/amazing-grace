@@ -73,10 +73,10 @@ function addSponsorsData(data)
       container.append(levelRows[level])
     }
 
+    console.log("Version 2.45")
     for (var i = 0; i < data.length; i++)
     {
       var row = data[i]
-
 
       // Detect sponsor rows
       if (row['Sponsor Name'] && row[year])
