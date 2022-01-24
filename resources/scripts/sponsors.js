@@ -57,7 +57,7 @@ function addSponsorsData(data)
     var levelRows = {};
     sponsorshipLevels.forEach(level =>
     {
-      levelRows[level] = $('<div></div>')
+      if (!levelRows[level]) levelRows[level] = $('<div></div>')
         .addClass('sponsorship-level-row')
         .append(
           '<div class="sticky sponsor-card">'
@@ -67,8 +67,11 @@ function addSponsorsData(data)
           + ' </div>'
           + '</div>'
         )
-      container.append(levelRows[level])
     })
+    for (var level in sponsorshipLevels)
+    {
+      container.children('.sponsorship-level-row').last().append(levelRows[level])
+    }
 
     for (var i = 0; i < data.length; i++)
     {
@@ -76,7 +79,7 @@ function addSponsorsData(data)
 
 
       // Detect sponsor rows
-      if (row['Sponsor Name'])
+      if (row['Sponsor Name'] && row[year])
       {
         // container.children('.sponsorship-level-row').last().append(
         levelRows[row[year]].append(
