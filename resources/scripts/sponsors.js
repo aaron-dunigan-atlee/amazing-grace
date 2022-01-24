@@ -19,9 +19,10 @@ function init()
   })
 }
 
-function addSponsorsTab(year, show)
+function addSponsorsTab(year, index)
 {
   console.log("Adding tab for year %s", year)
+  var show = (index === 0)
   if (show) console.log("This tab is active")
 
   $('#sponsors-nav').append('<li class="nav-item" role="presentation">'
@@ -44,46 +45,53 @@ function addSponsorsData(data)
   DATA = data
   var years = []
   for (var y = 2014; data[0].hasOwnProperty(y); y++) { years.push(y) }
-  console.log(years)
-  return;
-
-  addSponsorsTab(sheet.year, index === 0)
-  var container = $("#sponsors-" + year + ' .sponsors-container')
-  for (var i = 0; i < data.length; i++)
+  years.reverse();
+  years.forEach(addSponsorsTab)
+  years.forEach(year =>
   {
-    var row = data[i]
-    // Sponsorship level categories have their own row
-    if (row['Sponsorship Level'] && !row['Sponsor Name'])
-    {
-      container.append(
-        $('<div></div>')
-          .addClass('sponsorship-level-row')
-          .append(
-            '<div class="sticky sponsor-card">'
-            + '<img src="./resources/images/logo_lighthouse.png" alt="" />'
-            + '<div class="caption sponsor-level">'
-            + '<h4>' + row['Sponsorship Level'] + '</h4>'
-            + ' </div>'
-            + '</div>'
-          )
-      )
-    }
+    var container = $("#sponsors-" + year + ' .sponsors-container')
 
-    // Detect sponsor rows
-    if (!row['Sponsorship Level'] && row['Sponsor Name'])
+    // Compile sponsorship levels for this year
+    var sponsorshipLevels = data.map(row => { return row[year] })
+      .filter(Boolean)
+    var levelRows = {};
+    sponsorshipLevels.forEach(level =>
     {
-      container.children('.sponsorship-level-row').last().append(
-        '<a href="' + (row['Website Link'] || '#') + '" target="_blank">'
-        + '<div class="sponsor-card' + (row['Logo Link'] ? '' : ' no-logo') + '">'
-        + '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
-        + '<div class="caption" title="' + row['Sponsor Name'] + '">'
-        + '<h4>' + row['Sponsor Name'] + '</h4>'
-        + ' </div>'
-        + '</div>'
-        + '</a>'
-      )
+      levelRows[level] = $('<div></div>')
+        .addClass('sponsorship-level-row')
+        .append(
+          '<div class="sticky sponsor-card">'
+          + '<img src="./resources/images/logo_lighthouse.png" alt="" />'
+          + '<div class="caption sponsor-level">'
+          + '<h4>' + level + '</h4>'
+          + ' </div>'
+          + '</div>'
+        )
+      container.append(levelRows[level])
+    })
+
+    for (var i = 0; i < data.length; i++)
+    {
+      var row = data[i]
+
+
+      // Detect sponsor rows
+      if (row['Sponsor Name'])
+      {
+        // container.children('.sponsorship-level-row').last().append(
+        levelRows[row[year]].append(
+          '<a href="' + (row['Website Link'] || '#') + '" target="_blank">'
+          + '<div class="sponsor-card' + (row['Logo Link'] ? '' : ' no-logo') + '">'
+          + '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
+          + '<div class="caption" title="' + row['Sponsor Name'] + '">'
+          + '<h4>' + row['Sponsor Name'] + '</h4>'
+          + ' </div>'
+          + '</div>'
+          + '</a>'
+        )
+      }
     }
-  }
+  })
 }
 
 function logData(data)
