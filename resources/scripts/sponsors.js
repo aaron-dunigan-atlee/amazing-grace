@@ -21,9 +21,9 @@ function init()
 
 function addSponsorsTab(year, index)
 {
-  console.log("Adding tab for year %s", year)
+  // console.log("Adding tab for year %s", year)
   var show = (index === 0)
-  if (show) console.log("This tab is active")
+  // if (show) console.log("This tab is active")
 
   $('#sponsors-nav').append('<li class="nav-item" role="presentation">'
     + '<a class="nav-link'
