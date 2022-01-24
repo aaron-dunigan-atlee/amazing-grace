@@ -57,21 +57,21 @@ function addSponsorsData(data)
     var levelRows = {};
     sponsorshipLevels.forEach(level =>
     {
-      if (!levelRows[level]) levelRows[level] = $('<div></div>')
-        .addClass('sponsorship-level-row')
-        .append(
-          '<div class="sticky sponsor-card">'
-          + '<img src="./resources/images/logo_lighthouse.png" alt="" />'
-          + '<div class="caption sponsor-level">'
-          + '<h4>' + level + '</h4>'
-          + ' </div>'
-          + '</div>'
-        )
+      if (!levelRows[level])
+      {
+        levelRows[level] = $('<div></div>')
+          .addClass('sponsorship-level-row')
+          .append(
+            '<div class="sticky sponsor-card">'
+            + '<img src="./resources/images/logo_lighthouse.png" alt="" />'
+            + '<div class="caption sponsor-level">'
+            + '<h4>' + level + '</h4>'
+            + ' </div>'
+            + '</div>'
+          )
+        container.append(levelRows[level])
+      }
     })
-    for (var level in levelRows)
-    {
-      container.append(levelRows[level])
-    }
 
     console.log("Version 2.45")
     for (var i = 0; i < data.length; i++)
