@@ -68,7 +68,7 @@ function addSponsorsData(data)
           + '</div>'
         )
     })
-    for (var level in sponsorshipLevels)
+    for (var level in levelRows)
     {
       container.append(levelRows[level])
     }
