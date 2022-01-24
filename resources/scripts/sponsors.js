@@ -73,7 +73,6 @@ function addSponsorsData(data)
       }
     })
 
-    console.log("Version 2.45")
     for (var i = 0; i < data.length; i++)
     {
       var row = data[i]
