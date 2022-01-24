@@ -1,9 +1,10 @@
 var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1mI0Prj20RwR-9bMV_wnmKgavspKl7jg6cvYrOLi61Fg/pub?output=csv';
-var sponsorSpreadsheetUrls = [
-  { 'year': '2021', 'url': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=541868499&single=true&output=csv' },
-  { 'year': '2020', 'url': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=0&single=true&output=csv' },
-  { 'year': '2019', 'url': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=374590758&single=true&output=csv' },
-]
+var sponsorSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=306826384&single=true&output=csv'
+//   [
+//   { 'year': '2021', 'url': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=541868499&single=true&output=csv' },
+//   { 'year': '2020', 'url': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=0&single=true&output=csv' },
+//   { 'year': '2019', 'url': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=374590758&single=true&output=csv' },
+// ]
 
 function init()
 {
@@ -36,9 +37,11 @@ function addSponsorsTab(year, show)
   )
 }
 
-function addSponsorsData(year, data)
+function addSponsorsData(data)
 {
-  console.log("Adding data for year %s", year)
+  console.log(data[0])
+  return;
+  addSponsorsTab(sheet.year, index === 0)
   var container = $("#sponsors-" + year + ' .sponsors-container')
   for (var i = 0; i < data.length; i++)
   {
@@ -67,7 +70,7 @@ function addSponsorsData(year, data)
         '<a href="' + (row['Website Link'] || '#') + '" target="_blank">'
         + '<div class="sponsor-card' + (row['Logo Link'] ? '' : ' no-logo') + '">'
         + '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
-        + '<div class="caption">'
+        + '<div class="caption" title="' + row['Sponsor Name'] + '">'
         + '<h4>' + row['Sponsor Name'] + '</h4>'
         + ' </div>'
         + '</div>'
@@ -94,17 +97,15 @@ function addToPage(data)
     }
   }
 
-  sponsorSpreadsheetUrls.forEach((sheet, index) =>
-  {
-    addSponsorsTab(sheet.year, index === 0)
-    Papa.parse(sheet.url, {
-      download: true,
-      header: true,
-      complete: function (results)
-      {
-        addSponsorsData(sheet.year, results.data)
-      }
-    })
+
+
+  Papa.parse(sponsorSpreadsheetUrl, {
+    download: true,
+    header: true,
+    complete: function (results)
+    {
+      addSponsorsData(results.data)
+    }
   })
 }
 
