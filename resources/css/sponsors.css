@@ -139,7 +139,7 @@
 }
 
 .sponsor-card:hover {
-  overflow-y: visible;
+  overflow: visible;
   border: none;
 }
 
@@ -157,7 +157,7 @@
   display: block;
 }  */
 
-.sponsor-card.no-logo .caption {
+.sponsor-card .no-hover .caption {
   opacity: 0.75;
 }
 
