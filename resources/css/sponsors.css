@@ -33,12 +33,18 @@
   font-size: x-large;
 }
 
-
 .sponsorship-level-row {
   display: flex;
   justify-content: left;
   flex-wrap: wrap;
   max-width: 960px;
+}
+
+.sponsor-card-container {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  flex-grow: 1;
 }
 
 .sponsor-card {
