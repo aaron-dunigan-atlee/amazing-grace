@@ -99,9 +99,9 @@
 
 .sponsor-card:hover > .caption,
 .sponsor-card.no-logo:hover > .caption,
-.sponsor-card:hover > .caption,
-.sponsor-card.no-logo:hover > .caption {
-  /* opacity: 1; */
+.sponsor-card:hover > .sponsor-years,
+.sponsor-card.no-logo:hover > .sponsor-years {
+  opacity: 1; 
   display: block;
 }
 

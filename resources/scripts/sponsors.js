@@ -95,7 +95,7 @@ function addSponsorsData(data)
             + '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
             + '<div class="caption" title="' + row['Sponsor Name'] + '">'
             + '<h4>' + row['Sponsor Name'] + '</h4>'
-            + '<p class="sponsor-years">Sponsor ' + row.years + '</p>'
+            + '<div class="sponsor-years">Sponsor ' + row.years + '</div>'
             + ' </div>'
             + '</div>'
             + '</a>'
