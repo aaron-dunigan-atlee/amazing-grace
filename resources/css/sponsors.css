@@ -49,6 +49,8 @@
 
 .sponsor-years {
   color:var(--logo-orange);
+  font-size: 0.75rem;
+  text-transform: uppercase;
 }
 
 .sponsor-card {
