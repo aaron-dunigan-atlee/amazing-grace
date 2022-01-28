@@ -36,7 +36,7 @@
 .sponsorship-level-row {
   display: flex;
   justify-content: left;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   max-width: 960px;
 }
 
@@ -57,6 +57,7 @@
   border-radius: 25px;
   height: 80px;
   width: 150px;
+  min-width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
