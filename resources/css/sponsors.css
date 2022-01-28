@@ -99,16 +99,18 @@
   /* display: none; */
 }
 
-.sponsor-card.hover {
+.sponsor-card .hover {
   overflow: visible;
   height: auto;
   display: none;
   position: absolute;
+  top: 0;
+  left: 0;
   background-color: var(--logo-yellow);
   z-index: 500;
 }
 
-.sponsor-card:hover {
+.sponsor-card:hover > .no-hover {
   visibility: hidden;
 }
 

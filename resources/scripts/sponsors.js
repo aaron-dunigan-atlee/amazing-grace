@@ -90,6 +90,7 @@ function addSponsorsData(data)
         // container.children('.sponsorship-level-row').last().append(
         var sponsorCard =
           '<div class="sponsor-card' + (row['Logo Link'] ? '' : ' no-logo') + '">'
+          + '<div class="no-hover">'
           + (
             row['Logo Link'] ?
               '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
@@ -98,13 +99,13 @@ function addSponsorsData(data)
               + '</div>'
           )
           + '</div>'
-
-          + '<div class="sponsor-card hover">'
+          + '<div class="hover">'
           + '<div class="caption" title="' + row['Sponsor Name'] + '">'
           + (row['Website Link'] ? '<a href="' + row['Website Link'] + '" target="_blank">' : '')
           + '<h4>' + row['Sponsor Name'] + '</h4>'
           + (row['Website Link'] ? '</a>' : '')
           + '<div class="sponsor-years">Sponsor ' + row.years + '</div>'
+          + '</div>'
           + '</div>'
           + '</div>'
 
