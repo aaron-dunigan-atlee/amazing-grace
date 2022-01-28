@@ -88,18 +88,28 @@ function addSponsorsData(data)
       if (row['Sponsor Name'] && row[year])
       {
         // container.children('.sponsorship-level-row').last().append(
-        levelRows[row[year]].find('.sponsor-card-container')
-          .append(
-            '<a href="' + (row['Website Link'] || '#') + '" target="_blank">'
-            + '<div class="sponsor-card' + (row['Logo Link'] ? '' : ' no-logo') + '">'
-            + '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
-            + '<div class="caption" title="' + row['Sponsor Name'] + '">'
-            + '<h4>' + row['Sponsor Name'] + '</h4>'
-            + '<div class="sponsor-years">Sponsor ' + row.years + '</div>'
-            + ' </div>'
-            + '</div>'
-            + '</a>'
+        var sponsorCard =
+          '<div class="sponsor-card' + (row['Logo Link'] ? '' : ' no-logo') + '">'
+          + (
+            row['Logo Link'] ?
+              '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
+              : '<div class="caption" title="' + row['Sponsor Name'] + '">'
+              + '<h4>' + row['Sponsor Name'] + '</h4>'
+              + '</div>'
           )
+          + '</div>'
+
+          + '<div class="sponsor-card hover">'
+          + '<div class="caption" title="' + row['Sponsor Name'] + '">'
+          + (row['Website Link'] ? '<a href="' + row['Website Link'] + '" target="_blank">' : '')
+          + '<h4>' + row['Sponsor Name'] + '</h4>'
+          + (row['Website Link'] ? '</a>' : '')
+          + '<div class="sponsor-years">Sponsor ' + row.years + '</div>'
+          + '</div>'
+          + '</div>'
+
+        levelRows[row[year]].find('.sponsor-card-container')
+          .append(sponsorCard)
       }
     }
   })
