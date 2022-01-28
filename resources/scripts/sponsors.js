@@ -45,8 +45,14 @@ function addSponsorsData(data)
   DATA = data
   var years = []
   for (var y = 2014; data[0].hasOwnProperty(y); y++) { years.push(y) }
+  data.forEach(row =>
+  {
+    row.years = getRanges(years.filter(y => { return row[y] })).join(', ')
+  })
+
   years.reverse();
   years.forEach(addSponsorsTab)
+
   years.forEach(year =>
   {
     var container = $("#sponsors-" + year + ' .sponsors-container')
@@ -89,6 +95,7 @@ function addSponsorsData(data)
             + '<img src="' + (row['Logo Link'] || '') + '" alt="" />'
             + '<div class="caption" title="' + row['Sponsor Name'] + '">'
             + '<h4>' + row['Sponsor Name'] + '</h4>'
+            + '<p class="sponsor-years">Sponsor ' + row.years + '</p>'
             + ' </div>'
             + '</div>'
             + '</a>'
@@ -96,6 +103,24 @@ function addSponsorsData(data)
       }
     }
   })
+}
+
+// https://stackoverflow.com/a/2270987
+function getRanges(array)
+{
+  var ranges = [], rstart, rend;
+  for (var i = 0; i < array.length; i++)
+  {
+    rstart = array[i];
+    rend = rstart;
+    while (array[i + 1] - array[i] == 1)
+    {
+      rend = array[i + 1]; // increment the index if the numbers sequential
+      i++;
+    }
+    ranges.push(rstart == rend ? rstart + '' : rstart + '-' + rend.toString().replace(/^20/, ''));
+  }
+  return ranges;
 }
 
 function logData(data)
