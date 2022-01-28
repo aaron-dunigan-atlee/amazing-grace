@@ -68,7 +68,7 @@ function addSponsorsData(data)
         levelRows[level] = $('<div></div>')
           .addClass('sponsorship-level-row')
           .append(
-            '<div class="sticky sponsor-card">'
+            '<div class="sponsorship-level-card">'
             + '<img src="./resources/images/logo_lighthouse.png" alt="" />'
             + '<div class="caption sponsor-level">'
             + '<h4>' + level + '</h4>'
@@ -118,7 +118,7 @@ function getRanges(array)
       rend = array[i + 1]; // increment the index if the numbers sequential
       i++;
     }
-    ranges.push(rstart == rend ? rstart + '' : rstart + '-' + rend.toString().replace(/^20/, ''));
+    ranges.push(rstart == rend ? rstart + '' : rstart + '-' + rend.toString());
   }
   return ranges;
 }
