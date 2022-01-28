@@ -47,12 +47,6 @@
   flex-grow: 1;
 }
 
-.sponsor-years {
-  color:var(--logo-orange);
-  font-size: 0.75rem;
-  text-transform: uppercase;
-}
-
 .sponsor-card {
   position: relative;
   border: 1px solid var(--logo-orange);
@@ -78,7 +72,8 @@
 }
 
 .sponsor-card:hover > img {
-  opacity: 0.2;
+  /* opacity: 0.2; */
+  display: none;
 }
 
 .sponsor-card .caption {
@@ -91,9 +86,23 @@
   margin: 0.5rem;
 }
 
+.sponsor-card .caption h4 {
+  font-size: 0.8rem;
+} 
+
+.sponsor-years {
+  color: var(--logo-orange);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  display: none;
+}
+
+.sponsor-card:hover > .caption,
+.sponsor-card.no-logo:hover > .caption,
 .sponsor-card:hover > .caption,
 .sponsor-card.no-logo:hover > .caption {
-  opacity: 1;
+  /* opacity: 1; */
+  display: block;
 }
 
 .sponsor-card.no-logo .caption {
