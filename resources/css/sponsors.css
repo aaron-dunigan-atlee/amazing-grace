@@ -159,35 +159,8 @@ a:hover {
   text-decoration: none;
 }
 
-@media(hover: hover) and (pointer: fine) {
-  
-  .sponsor-card:hover > img {
-    /* opacity: 0.2; */
-    display: none;
-  }
-
-  .sponsor-card:hover > .no-hover {
-    visibility: hidden;
-  }
-
-  .sponsor-card:hover > .hover {
-    display: block;
-    height: auto;
-    max-height: none;
-    border: 1px solid var(--logo-orange);
-    border-radius: 25px;
-  }
-  
-  .sponsor-card:hover {
-    overflow: visible;
-    border: none;
-  }
-
-
-}
 
 /* For devices without hover, we use js to assign a class .hovered when clicked once. */
-@media not ((hover: hover) and (pointer: fine)) {
   
   .sponsor-card.hovered > img {
     /* opacity: 0.2; */
@@ -211,6 +184,29 @@ a:hover {
     border: none;
   }
 
+/* The above are over-ridden on hover devices */ 
+@media(hover: hover) and (pointer: fine) {
+  
+  .sponsor-card:hover > img {
+    /* opacity: 0.2; */
+    display: none;
+  }
 
+  .sponsor-card:hover > .no-hover {
+    visibility: hidden;
+  }
+
+  .sponsor-card:hover > .hover {
+    display: block;
+    height: auto;
+    max-height: none;
+    border: 1px solid var(--logo-orange);
+    border-radius: 25px;
+  }
+  
+  .sponsor-card:hover {
+    overflow: visible;
+    border: none;
+  }
 
 }
