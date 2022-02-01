@@ -148,7 +148,6 @@ a:hover {
       border-color: var(--logo-orange) var(--logo-orange) var(--logo-yellow);
   }
 
-
   .nav-tabs .nav-link:hover {
     border-color: var(--logo-yellow) var(--logo-yellow) var(--logo-orange);
     color: var(--logo-orange);
