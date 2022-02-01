@@ -8,6 +8,20 @@
   border-bottom: 1px solid var(--logo-orange);
 }
 
+.nav-tabs .nav-item.show .nav-link, 
+.nav-tabs .nav-link.active, 
+.nav-tabs .nav-link.active:hover, 
+.nav-tabs .nav-link:focus {
+    color: var(--logo-orange);
+    background-color: var(--logo-yellow);
+    border-color: var(--logo-orange) var(--logo-orange) var(--logo-yellow);
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: var(--logo-yellow) var(--logo-yellow) var(--logo-orange);
+  color: var(--logo-orange);
+}
+
 .sponsor-logo {
   width: 150px;
 }
@@ -98,6 +112,14 @@
   min-height: 100%;
 }
 
+.sponsor-card.hover > .caption,
+.sponsor-card.no-logo.hover > .caption {
+  opacity: 1; 
+  height: fit-content;
+  min-height: fit-content;
+}
+
+
 .sponsor-card .no-hover {
   max-width: 100%;
   max-height: 100%;
@@ -138,26 +160,11 @@ a:hover {
 }
 
 @media(hover: hover) and (pointer: fine) {
-
-  .nav-tabs .nav-item.show .nav-link, 
-  .nav-tabs .nav-link.active, 
-  .nav-tabs .nav-link.active:hover, 
-  .nav-tabs .nav-link:focus {
-      color: var(--logo-orange);
-      background-color: var(--logo-yellow);
-      border-color: var(--logo-orange) var(--logo-orange) var(--logo-yellow);
-  }
-
-  .nav-tabs .nav-link:hover {
-    border-color: var(--logo-yellow) var(--logo-yellow) var(--logo-orange);
-    color: var(--logo-orange);
-  }
   
   .sponsor-card:hover > img {
     /* opacity: 0.2; */
     display: none;
   }
-
 
   .sponsor-card:hover > .no-hover {
     visibility: hidden;
@@ -176,12 +183,34 @@ a:hover {
     border: none;
   }
 
-  .sponsor-card.hover > .caption,
-  .sponsor-card.no-logo.hover > .caption {
-    opacity: 1; 
-    height: fit-content;
-    min-height: fit-content;
+
+}
+
+/* For devices without hover, we use js to assign a class .hovered when clicked once. */
+@media not ((hover: hover) and (pointer: fine)) {
+  
+  .sponsor-card.hovered > img {
+    /* opacity: 0.2; */
+    display: none;
+  }
+
+  .sponsor-card.hovered > .no-hover {
+    visibility: hidden;
+  }
+
+  .sponsor-card.hovered > .hover {
+    display: block;
+    height: auto;
+    max-height: none;
+    border: 1px solid var(--logo-orange);
+    border-radius: 25px;
   }
   
+  .sponsor-card.hovered {
+    overflow: visible;
+    border: none;
+  }
+
+
 
 }

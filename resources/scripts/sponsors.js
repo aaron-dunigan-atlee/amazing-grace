@@ -10,6 +10,12 @@ var SPONSORSHIP_LEVELS = [
   '$999 and under'
 ]
 
+$(document).ready(() =>
+{
+  init();
+  $(document).on('click', '.sponsor-card', onClickSponsorCard)
+})
+
 function init()
 {
   // See https://www.papaparse.com/docs
@@ -21,6 +27,12 @@ function init()
       addToPage(results.data)
     }
   })
+}
+
+function onClickSponsorCard(event)
+{
+  $('.sponsor-card').not($(this)).removeClass('hovered')
+  $(this).addClass('hovered')
 }
 
 function addSponsorsTab(year, index)
@@ -183,5 +195,3 @@ function getMeta(metaName)
 
   return '';
 }
-
-window.addEventListener('DOMContentLoaded', init)
