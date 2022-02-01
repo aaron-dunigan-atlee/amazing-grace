@@ -159,9 +159,14 @@ a:hover {
   text-decoration: none;
 }
 
+.sponsor-card a,
+.sponsor-card a:hover {
+  text-decoration: underline;
+}
 
 /* For devices without hover, we use js to assign a class .hovered when clicked once. */
-  
+
+
   .sponsor-card.hovered > img {
     /* opacity: 0.2; */
     display: none;
@@ -187,9 +192,8 @@ a:hover {
 /* The above are over-ridden on hover devices */ 
 @media(hover: hover) and (pointer: fine) {
   
-  .sponsor-card:hover > img {
-    /* opacity: 0.2; */
-    display: none;
+  .sponsor-card.hovered a {
+    text-decoration: none;
   }
 
   .sponsor-card:hover > .no-hover {

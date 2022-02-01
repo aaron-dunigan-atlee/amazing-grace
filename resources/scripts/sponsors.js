@@ -119,10 +119,10 @@ function addSponsorsData(data)
           + '</div>'
           + '<div class="hover">'
           + '<div class="caption" title="' + row['Sponsor Name'] + '">'
+          + '<div class="sponsor-years">Sponsor ' + row.years + '</div>'
           + (row['Website Link'] ? '<a href="' + row['Website Link'] + '" target="_blank">' : '')
           + '<h4>' + row['Sponsor Name'] + '</h4>'
           + (row['Website Link'] ? '</a>' : '')
-          + '<div class="sponsor-years">Sponsor ' + row.years + '</div>'
           + '</div>'
           + '</div>'
           + '</div>'
