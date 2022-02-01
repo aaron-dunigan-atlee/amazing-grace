@@ -1,10 +1,14 @@
 var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1mI0Prj20RwR-9bMV_wnmKgavspKl7jg6cvYrOLi61Fg/pub?output=csv';
 var sponsorSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=306826384&single=true&output=csv'
-//   [
-//   { 'year': '2021', 'url': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=541868499&single=true&output=csv' },
-//   { 'year': '2020', 'url': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=0&single=true&output=csv' },
-//   { 'year': '2019', 'url': 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQM_Fvk7louC_v6rGXUR0vKfRnmYqZcRQ8ZFnPoj_am9RsBTxY5xaLCty0Qtw1CHMK-eLeYvBCZcJts/pub?gid=374590758&single=true&output=csv' },
-// ]
+
+var SPONSORSHIP_LEVELS = [
+  '$15,000+',
+  '$10,000 - $14,999',
+  '$5,000 - $9,999',
+  '$3,000 - $4,999',
+  '$1,000 - $2,999',
+  '$999 and under'
+]
 
 function init()
 {
@@ -58,8 +62,10 @@ function addSponsorsData(data)
     var container = $("#sponsors-" + year + ' .sponsors-container')
 
     // Compile sponsorship levels for this year
-    var sponsorshipLevels = data.map(row => { return row[year] })
-      .filter(Boolean)
+    var sponsorshipLevels = SPONSORSHIP_LEVELS.filter(level =>
+    {
+      return data.some(row => { return row[year] === level })
+    })
     var levelRows = {};
     sponsorshipLevels.forEach(level =>
     {

@@ -1,19 +1,7 @@
-.nav-tabs .nav-item.show .nav-link, 
-.nav-tabs .nav-link.active, 
-.nav-tabs .nav-link.active:hover, 
-.nav-tabs .nav-link:focus {
-    color: var(--logo-orange);
-    background-color: var(--logo-yellow);
-    border-color: var(--logo-orange) var(--logo-orange) var(--logo-yellow);
-}
+
 
 .nav-tabs .nav-link {
   color:var(--dark-accent-text)
-}
-
-.nav-tabs .nav-link:hover {
-  border-color: var(--logo-yellow) var(--logo-yellow) var(--logo-orange);
-  color: var(--logo-orange);
 }
 
 .nav-tabs {
@@ -72,11 +60,6 @@
   opacity: 1;
 }
 
-.sponsor-card:hover > img {
-  /* opacity: 0.2; */
-  display: none;
-}
-
 .sponsor-card .caption {
   color: var(--logo-orange);
   text-align: center;
@@ -126,37 +109,6 @@
   align-items: center;
 }
 
-.sponsor-card:hover > .no-hover {
-  visibility: hidden;
-}
-
-.sponsor-card:hover > .hover {
-  display: block;
-  height: auto;
-  max-height: none;
-  border: 1px solid var(--logo-orange);
-  border-radius: 25px;
-}
-
-.sponsor-card:hover {
-  overflow: visible;
-  border: none;
-}
-
-/* .sponsor-card:hover > .caption,
-.sponsor-card.no-logo:hover > .caption { */
-.sponsor-card.hover > .caption,
-.sponsor-card.no-logo.hover > .caption {
-  opacity: 1; 
-  height: fit-content;
-  min-height: fit-content;
-}
-/* 
-.sponsor-card:hover .sponsor-years,
-.sponsor-card.no-logo:hover .sponsor-years {
-  display: block;
-}  */
-
 .sponsor-card .no-hover .caption {
   opacity: 0.75;
 }
@@ -183,4 +135,54 @@
 a:hover {
   color: inherit;
   text-decoration: none;
+}
+
+@media(hover: hover) and (pointer: fine) {
+
+  .nav-tabs .nav-item.show .nav-link, 
+  .nav-tabs .nav-link.active, 
+  .nav-tabs .nav-link.active:hover, 
+  .nav-tabs .nav-link:focus {
+      color: var(--logo-orange);
+      background-color: var(--logo-yellow);
+      border-color: var(--logo-orange) var(--logo-orange) var(--logo-yellow);
+  }
+
+
+  .nav-tabs .nav-link:hover {
+    border-color: var(--logo-yellow) var(--logo-yellow) var(--logo-orange);
+    color: var(--logo-orange);
+  }
+  
+  .sponsor-card:hover > img {
+    /* opacity: 0.2; */
+    display: none;
+  }
+
+
+  .sponsor-card:hover > .no-hover {
+    visibility: hidden;
+  }
+
+  .sponsor-card:hover > .hover {
+    display: block;
+    height: auto;
+    max-height: none;
+    border: 1px solid var(--logo-orange);
+    border-radius: 25px;
+  }
+  
+  .sponsor-card:hover {
+    overflow: visible;
+    border: none;
+  }
+
+  .sponsor-card.hover > .caption,
+  .sponsor-card.no-logo.hover > .caption {
+    opacity: 1; 
+    height: fit-content;
+    min-height: fit-content;
+  }
+  
+
 }
